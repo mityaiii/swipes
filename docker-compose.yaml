@@ -1,0 +1,12 @@
+version: "3"
+services:
+  postgesql:
+    image: postgres
+    restart: unless-stopped
+    container_name: slides-postgres
+    environment:
+      - "POSTGRES_USER=postgres"
+      - "POSTGRES_DB=swipes"
+      - "POSTGRES_HOST_AUTH_METHOD=trust"
+    ports:
+      - 15432:5432
